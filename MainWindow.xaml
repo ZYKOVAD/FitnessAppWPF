@@ -1,0 +1,24 @@
+﻿<Window x:Class="FitnessApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FitnessApp"
+        mc:Ignorable="d"
+        Title="FitnessApp" Height="450" Width="715" ResizeMode="CanMinimize">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="500"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel>
+            <Button x:Name="But_all" Click="But_all_click"  Grid.Row="0" Content="Все клиенты" Height="50" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}" />
+            <Button x:Name="But_client" Click="But_client_click" Content="Текущий клиент" Height="50"  Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}" />
+            <Button x:Name="But_employees" Click="But_employees_click" Grid.Row="2" Content="Сотрудники" Height="50"  Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}"/>
+        </StackPanel>
+        <Frame Name="Frame" Grid.Column="1" NavigationUIVisibility="Hidden"/>
+        
+    </Grid>
+</Window>
