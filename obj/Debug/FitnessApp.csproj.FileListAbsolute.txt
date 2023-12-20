@@ -73,3 +73,5 @@ C:\Users\HONOR\Documents\ВУЗ\курсач\FitnessApp\obj\Debug\FitnessApp.csp
 C:\Users\HONOR\Documents\ВУЗ\курсач\FitnessApp\obj\Debug\FitnessApp.csproj.CopyComplete
 C:\Users\HONOR\Documents\ВУЗ\курсач\FitnessApp\obj\Debug\FitnessApp.exe
 C:\Users\HONOR\Documents\ВУЗ\курсач\FitnessApp\obj\Debug\FitnessApp.pdb
+C:\Users\HONOR\Documents\ВУЗ\курсач\FitnessApp\obj\Debug\Add_Employee.g.cs
+C:\Users\HONOR\Documents\ВУЗ\курсач\FitnessApp\obj\Debug\Add_Employee.baml

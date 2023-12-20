@@ -13,8 +13,6 @@ namespace FitnessApp.Classes
 {
     internal static class ArchiveClients
     {
-        //static public List<Client> clientList = Read();
-
         public static Client GetClientById(int id, List<Client> list)
         {
             Client res = null;

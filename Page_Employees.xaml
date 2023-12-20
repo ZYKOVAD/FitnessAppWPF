@@ -8,11 +8,25 @@
       d:DesignHeight="450" d:DesignWidth="500"
       Title="Page3">
 
-    <Grid>
-        <Grid Background="white">
-            <TextBox Text="сотрудники" Width="300" Height="100" FontSize="24"/>
-
-
+    <Grid Background="white">
+        <Grid VerticalAlignment="Top" Height="50">
+            <Button x:Name="But_Add_Employee" Click="But_Add_Employee_Click" Content="Добавить нового сотрудника"  Margin="10 0 10 0" Height="30" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}"/>
         </Grid>
+        <DataGrid x:Name="dgClients" VerticalAlignment="Top" Margin="0 50 0 40" Loaded="Loaded_page1" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path = ID}" IsReadOnly="True" Header="ID"/>
+                <DataGridTextColumn Binding="{Binding Path = Name}" IsReadOnly="True" Header="Имя" />
+                <DataGridTextColumn Binding="{Binding Path = Surname}" IsReadOnly="True"  Header="Фамилия"/>
+                <DataGridTextColumn Binding="{Binding Path = SecondName}" IsReadOnly="True"  Header="Отчество"/>
+                <DataGridTextColumn Binding="{Binding Path = PhoneNumber}" IsReadOnly="True"  Header="Телефон"/>
+                <DataGridTextColumn Binding="{Binding Path = Email}" IsReadOnly="True"  Header="E-mail"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid VerticalAlignment="Bottom" Height="40">
+            <TextBlock Text="Удалить сотрудника с ID:" FontSize="16" HorizontalAlignment="Left" Foreground="#FF3B533C" VerticalAlignment="Center"/>
+            <TextBox x:Name="ID_Emp" Height="30" Width="150" Margin="30 0 0 0" ></TextBox>
+            <Button x:Name="But_delete" Click="But_delete_Click" Content="Удалить"  HorizontalAlignment="Right" Height="30" Width="150" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}"></Button>
+        </Grid>
+        
     </Grid>
 </Page>

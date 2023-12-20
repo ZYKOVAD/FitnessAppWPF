@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessApp.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,47 @@ namespace FitnessApp
         {
             InitializeComponent();
         }
+
+        List<Employee> _listEmpl;
+
+        private void Loaded_page1(object sender, RoutedEventArgs e)
+        {
+           
+            try
+            {
+                _listEmpl = EmployeeList.Read();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            dgClients.ItemsSource = _listEmpl;
+        }
+
+        private void But_Add_Employee_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Add_Employee());
+        }
+
+        private void But_delete_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(ID_Emp.Text);
+            List<Employee> list = EmployeeList.Read();
+            foreach (Employee emp in list)
+            {
+                if (emp.ID == id)
+                {
+                    list.Remove(emp);
+                    break;
+                }
+            }
+            EmployeeList.Write(list);
+            ID_Emp.Clear();
+            NavigationService.Refresh();
+            MessageBox.Show("Сотрудник удалён!");
+            
+        }
     }
+    
 }

@@ -35,8 +35,6 @@ namespace FitnessApp
 
             ArchiveClients.Write(client);
 
-            //ArchiveClients.clientList.Add(client);
-
             MessageBox.Show("Клиент создан!");
         }
 
