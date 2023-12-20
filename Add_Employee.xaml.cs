@@ -33,6 +33,8 @@ namespace FitnessApp
             EmployeeList.Write(emp);
 
             MessageBox.Show("Сотрудник создан!");
+
+            NavigationService.Navigate(new Page3());
         }
     }
 }

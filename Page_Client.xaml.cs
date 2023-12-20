@@ -106,9 +106,6 @@ namespace FitnessApp
             But_AddToArchive.Visibility = Visibility.Hidden;
 
             But_OutOFArchive.Visibility = Visibility.Visible;
-
-            // показать надпись клиент в архиве и сменить кнопку
-
         }
 
         private void But_OutOFArchive_Click(object sender, RoutedEventArgs e)
@@ -134,8 +131,41 @@ namespace FitnessApp
             But_AddToArchive.Visibility = Visibility.Visible;
 
             But_OutOFArchive.Visibility = Visibility.Hidden;
+        }
 
-            // убрать надпись клиент в архиве и сменить кнопку
+        private void But_Delete_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(IDB.Text);
+            List<Client> list;
+            if (But_OutOFArchive.Visibility == Visibility.Hidden)
+            {
+                list = ArchiveClients.Read();
+                foreach (Client client in list)
+                {
+                    if (client.ID == id)
+                    {
+                        list.Remove(client);
+                        break;
+                    }
+                }
+                ArchiveClients.Write(list);
+            }
+            else
+            {
+                list = ClientsArchive.Read();
+                foreach (Client client in list)
+                {
+                    if (client.ID == id)
+                    {
+                        list.Remove(client);
+                        break;
+                    }
+                }
+                ClientsArchive.Write(list);
+            }
+            
+            MessageBox.Show("Сотрудник удалён!");
+            NavigationService.Navigate(new Page1());
         }
     }
 }

@@ -17,7 +17,7 @@
             <Button x:Name="But_ShowClient" Click="Click_But_ShowClient" Content="Показать" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" Height="30" Width="100" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}"/>
         </Grid>
 
-        <Grid Height="280" VerticalAlignment="Top" Margin="5 55 5 0 " ShowGridLines="True">
+        <Grid Height="250" VerticalAlignment="Top" Margin="5 50 5 0 " ShowGridLines="True">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="180"></ColumnDefinition>
@@ -53,22 +53,23 @@
             <TextBlock Text="Начало абонемента" Grid.Row="9" Grid.Column="0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
             <TextBlock Text="Конец абонемента" Grid.Row="10" Grid.Column="0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
 
-            <TextBlock x:Name="IDB" Grid.Row="0" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="NameB" Grid.Row="1" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="SurnameB" Grid.Row="2" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="SecondNameB" Grid.Row="3" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="PhoneB" Grid.Row="4" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="EmailB" Grid.Row="5" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="NumDealB" Grid.Row="6" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="TrainerIDB" Grid.Row="7" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="CostB" Grid.Row="8" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="DataStartB" Grid.Row="9" Grid.Column="1" Margin="5" TextAlignment="Left"/>
-            <TextBlock x:Name="DataEndB" Grid.Row="10" Grid.Column="1" Margin="5" TextAlignment="Left"/>
+            <TextBlock x:Name="IDB" Grid.Row="0" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="NameB" Grid.Row="1" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="SurnameB" Grid.Row="2" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="SecondNameB" Grid.Row="3" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="PhoneB" Grid.Row="4" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="EmailB" Grid.Row="5" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="NumDealB" Grid.Row="6" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="TrainerIDB" Grid.Row="7" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="CostB" Grid.Row="8" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="DataStartB" Grid.Row="9" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
+            <TextBlock x:Name="DataEndB" Grid.Row="10" Grid.Column="1" Margin="5" TextAlignment="Left" VerticalAlignment="Center"/>
         </Grid>
 
-        <Grid VerticalAlignment="Bottom" Height="80">
-            <Button x:Name="But_AddToArchive" Click="But_AddToArchive_Click" Visibility="Visible" Content="Добавить клиента в архив" Height="40" Width="220" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}" />
-            <Button x:Name="But_OutOFArchive" Click="But_OutOFArchive_Click" Visibility="Hidden" Content="Вернуть клиента из архива" Height="40" Width="220" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="10" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}" />
+        <Grid VerticalAlignment="Bottom" Height="110">
+            <Button x:Name="But_AddToArchive" Click="But_AddToArchive_Click" Visibility="Visible" Content="Добавить клиента в архив" Height="40" Width="220" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}" />
+            <Button x:Name="But_OutOFArchive" Click="But_OutOFArchive_Click" Visibility="Hidden" Content="Вернуть клиента из архива" Height="40" Width="220" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}" />
+            <Button x:Name="But_Delete" Click="But_Delete_Click" Content="Удалить клиента" Height="40" Width="220" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" Background="#FF3B533C" Foreground="White" BorderBrush="{x:Null}" />
             <TextBlock x:Name="clar" Visibility="Hidden" Text="Клиент находится в архиве!" FontSize="16"  VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FF3B533C" Margin="10"/>
         </Grid>
 
