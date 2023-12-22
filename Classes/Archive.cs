@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Shapes;
 using Path = System.IO.Path;
 
@@ -13,6 +14,7 @@ namespace FitnessApp.Classes
 {
     internal static class ArchiveClients
     {
+        
         public static Client GetClientById(int id, List<Client> list)
         {
             Client res = null;
@@ -126,6 +128,19 @@ namespace FitnessApp.Classes
             return res;
         }
 
+        static public void Delete(int id)
+        {
+            List<Client> list = Read();
+            foreach (Client client in list)
+            {
+                if (client.ID == id)
+                {
+                    list.Remove(client);
+                    break;
+                }
+            }
+            Write(list);
+        }
         
     }
 }

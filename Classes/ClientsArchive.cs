@@ -8,9 +8,7 @@ using System.Windows.Documents;
 
 namespace FitnessApp.Classes
 {
-    internal class ClientsArchive
-    {
-        //static public List<Client> clientList = Read();
+    internal class ClientsArchive { 
 
         public static Client GetClientById(int id, List<Client> list)
         {
@@ -128,6 +126,20 @@ namespace FitnessApp.Classes
                 return new List<Client>();
             }
             
+        }
+
+        public static void Delete(int id)
+        {
+            List<Client> list = Read();
+            foreach (Client client in list)
+            {
+                if (client.ID == id)
+                {
+                    list.Remove(client);
+                    break;
+                }
+            }
+            Write(list);
         }
     }
 }

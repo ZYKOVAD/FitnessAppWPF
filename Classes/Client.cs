@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -62,6 +63,36 @@ namespace FitnessApp
             string memb = Membership.ToString();
             string str = $"{ID}!{Name}!{Surname}!{SecondName}!{PhoneNumber}!{Email}!{NumberDeal}!" + memb;
             return str;
+        }
+
+        static public void AddClientToArchive(int id)
+        {
+            List<Client> listClient = ArchiveClients.Read();
+
+            Client cl = ArchiveClients.GetClientById(id);
+
+            int index = ArchiveClients.GetIndexClientByID(id, listClient);
+
+            listClient.RemoveAt(index);
+
+            ArchiveClients.Write(listClient);  // перезапись файла
+
+            ClientsArchive.Write(cl);
+        }
+
+        static public void OutOfArchive(int id)
+        {
+            List<Client> listClient = ClientsArchive.Read();
+
+            Client cl = ClientsArchive.GetClientById(id, listClient);
+
+            int index = ClientsArchive.GetIndexClientByID(id, listClient);
+
+            listClient.RemoveAt(index);
+
+            ClientsArchive.Write(listClient);
+
+            ArchiveClients.Write(cl);
         }
     }
 }

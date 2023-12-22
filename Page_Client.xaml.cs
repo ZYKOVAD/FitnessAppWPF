@@ -87,17 +87,7 @@ namespace FitnessApp
         {
             int IDClient = int.Parse(IDB.Text);
 
-            List<Client> listClient = ArchiveClients.Read();
-
-            Client cl = ArchiveClients.GetClientById(IDClient, listClient);
-
-            int index = ArchiveClients.GetIndexClientByID(IDClient, listClient);
-            
-            listClient.RemoveAt(index);
-
-            ArchiveClients.Write(listClient);  // перезапись файла
-
-            ClientsArchive.Write(cl);
+            Client.AddClientToArchive(IDClient); 
 
             MessageBox.Show("Клиент добавлен в архив!");
 
@@ -112,17 +102,7 @@ namespace FitnessApp
         {
             int IDClient = int.Parse(IDB.Text);
 
-            List<Client> listClient = ClientsArchive.Read();
-
-            Client cl = ClientsArchive.GetClientById(IDClient, listClient);
-
-            int index = ClientsArchive.GetIndexClientByID(IDClient, listClient);
-
-            listClient.RemoveAt(index);
-
-            ClientsArchive.Write(listClient);
-
-            ArchiveClients.Write(cl);
+            Client.OutOfArchive(IDClient);
 
             MessageBox.Show("Клиент удален из архива!");
 
@@ -136,35 +116,17 @@ namespace FitnessApp
         private void But_Delete_Click(object sender, RoutedEventArgs e)
         {
             int id = int.Parse(IDB.Text);
-            List<Client> list;
+            
             if (But_OutOFArchive.Visibility == Visibility.Hidden)
             {
-                list = ArchiveClients.Read();
-                foreach (Client client in list)
-                {
-                    if (client.ID == id)
-                    {
-                        list.Remove(client);
-                        break;
-                    }
-                }
-                ArchiveClients.Write(list);
+                ArchiveClients.Delete(id);
             }
             else
             {
-                list = ClientsArchive.Read();
-                foreach (Client client in list)
-                {
-                    if (client.ID == id)
-                    {
-                        list.Remove(client);
-                        break;
-                    }
-                }
-                ClientsArchive.Write(list);
+                ClientsArchive.Delete(id);
             }
             
-            MessageBox.Show("Сотрудник удалён!");
+            MessageBox.Show("Клиент удалён!");
             NavigationService.Navigate(new Page1());
         }
     }

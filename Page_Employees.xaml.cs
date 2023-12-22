@@ -51,16 +51,7 @@ namespace FitnessApp
         private void But_delete_Click(object sender, RoutedEventArgs e)
         {
             int id = int.Parse(ID_Emp.Text);
-            List<Employee> list = EmployeeList.Read();
-            foreach (Employee emp in list)
-            {
-                if (emp.ID == id)
-                {
-                    list.Remove(emp);
-                    break;
-                }
-            }
-            EmployeeList.Write(list);
+            EmployeeList.Delete(id);
             ID_Emp.Clear();
             NavigationService.Refresh();
             MessageBox.Show("Сотрудник удалён!");

@@ -31,13 +31,22 @@ namespace FitnessApp
 
         private void But_Create_Client_Click(object sender, RoutedEventArgs e)
         {
-            Client client = new Client(NameBox.Text, SurnameBox.Text, SecondNameBox.Text, PhoneNumberBox.Text, EmailBox.Text, int.Parse(NumDealBox.Text), int.Parse(TrainerIDBox.Text), CostBox.Text, DataStartBox.Text, DataEndBox.Text);
+            try
+            {
+                Client client = new Client(NameBox.Text, SurnameBox.Text, SecondNameBox.Text, PhoneNumberBox.Text, EmailBox.Text, int.Parse(NumDealBox.Text), int.Parse(TrainerIDBox.Text), CostBox.Text, DataStartBox.Text, DataEndBox.Text);
+                ArchiveClients.Write(client);
+                MessageBox.Show("Клиент создан!");
 
-            ArchiveClients.Write(client);
+                NavigationService.Navigate(new Page1());
+            }
+            catch
+            {
+                MessageBox.Show("Данные введены некорректно!");
+                
 
-            MessageBox.Show("Клиент создан!");
-
-            NavigationService.Navigate(new Page1());
+            }
+         
+            
         }
 
     }

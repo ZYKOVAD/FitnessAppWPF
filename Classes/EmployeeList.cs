@@ -1,13 +1,15 @@
-﻿using System;
+﻿using FitnessApp.Classes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace FitnessApp.Classes
 {
-    internal class EmployeeList
+    internal static class EmployeeList
     {
         public static List<Employee> Read()
         {
@@ -60,5 +62,20 @@ namespace FitnessApp.Classes
                 }
             }
         }
+
+        static public void Delete(int id)
+        {
+            List<Employee> list = Read();
+            foreach (Employee emp in list)
+            {
+                if (emp.ID == id)
+                {
+                    list.Remove(emp);
+                    break;
+                }
+            }
+            Write(list);
+        }
+
     }
 }
